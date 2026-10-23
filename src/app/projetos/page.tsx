@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { VideoPlayer } from "@/components/interactive/VideoPlayer";
 import { PageShell } from "@/components/layout/PageShell";
 import { ProjectFilter } from "@/components/sections/ProjectFilter";
 import { egc, portfolio, projectKinds } from "@/data/site";
@@ -17,7 +18,7 @@ function Ficha({ item }: { item: Project }) {
   return <>
     {"image" in item
       ? <Link className="ficha-media" href={item.links[0].href} tabIndex={-1} aria-hidden="true"><Image src={item.image.src} width={item.image.width} height={item.image.height} alt="" sizes="(max-width: 980px) 100vw, 460px" loading="lazy" /></Link>
-      : <div className="ficha-media ficha-videos">{egc.videos.map(video => <a key={video.href} href={video.href} target="_blank" rel="noopener noreferrer"><i aria-hidden="true">▶</i><span><strong>{video.title}</strong><small>por {video.author}</small></span></a>)}</div>}
+      : <VideoPlayer videos={egc.videos} />}
     <div>
       <p className="kind" data-kind={item.kind}>{item.category}</p>
       <h2>{item.title}</h2>

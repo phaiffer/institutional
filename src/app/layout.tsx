@@ -24,5 +24,5 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 const motionScript = `(function(){try{if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var d=document.documentElement;d.classList.add("motion-ok");setTimeout(function(){if(!window.__motionReady)d.classList.add("motion-fallback")},4000)}catch(e){}})();`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: motionScript }} /></head><body>{children}<MotionObserver /></body></html>;
+  return <html lang="pt-BR" data-scroll-behavior="smooth" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: motionScript }} /></head><body>{children}<MotionObserver /></body></html>;
 }

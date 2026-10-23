@@ -50,8 +50,8 @@ export const egc = {
   repository: "https://github.com/Fmarzochi/EGC",
   website: "https://fmarzochi.github.io/EGCSite/",
   videos: [
-    { title: "EGC Demo v2", author: "Willian Phaiffer", href: "https://youtu.be/A8M_98WdI0Q" },
-    { title: "EGC Pitch EGCxSOL", author: "Felipe Marzochi", href: "https://www.youtube.com/watch?v=pXWsDcCe8TQ" },
+    { id: "A8M_98WdI0Q", title: "EGC Demo v2", author: "Willian Phaiffer", href: "https://youtu.be/A8M_98WdI0Q", poster: "/demos/egc/A8M_98WdI0Q-960.webp" },
+    { id: "pXWsDcCe8TQ", title: "EGC Pitch EGCxSOL", author: "Felipe Marzochi", href: "https://www.youtube.com/watch?v=pXWsDcCe8TQ", poster: "/demos/egc/pXWsDcCe8TQ-960.webp" },
   ],
 } as const;
 
