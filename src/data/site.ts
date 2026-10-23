@@ -1,6 +1,7 @@
 export const site = {
   name: "PhaifferTech",
   email: "phaiffertech@gmail.com",
+  whatsapp: { label: "(41) 99629-4533", href: "https://wa.me/5541996294533?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20PhaifferTech." },
   url: "https://phaiffertech.com.br",
   tagline: "Conectamos tecnologia ao seu negócio.",
   description: "Consultoria em engenharia de software, dados, integração e arquitetura para conectar tecnologia aos desafios do negócio.",

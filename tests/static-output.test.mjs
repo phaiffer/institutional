@@ -127,6 +127,7 @@ test("as páginas institucionais têm metadados próprios, entram no sitemap e m
   const projects = institutional.get("/projetos/");
   for (const path of [demoPath, petPath, nycPath, trichologyPath]) assert.ok(projects.includes(`href="${path}"`), `Projetos sem link para: ${path}`);
   assert.ok(institutional.get("/contato/").includes("Nada é enviado por este site"));
+  for (const page of [html, institutional.get("/contato/")]) assert.ok(page.includes('href="https://wa.me/5541996294533'), "WhatsApp ausente");
 });
 
 test("a home usa ícones e imagens leves", () => {

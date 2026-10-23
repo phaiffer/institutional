@@ -129,6 +129,8 @@ export function Contact() {
     <div className="contact-box" data-reveal style={delay(1)}>
       <p className="eyebrow">E-mail</p>
       <a className="contact-email" href={`mailto:${site.email}`}>{site.email}</a>
+      <p className="eyebrow">WhatsApp</p>
+      <a className="contact-email" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">{site.whatsapp.label}</a>
       <div className="contact-actions"><Link className="button button-primary" href={contactHref}>Escrever pelo formulário</Link><CopyButton text={site.email} label="Copiar e-mail" className="button button-outline" /></div>
     </div>
   </div></section>;

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marca PhaifferTech: revisão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Readex+Pro:wght@600&family=Lexend:wght@650&family=Plus+Jakarta+Sans:wght@800&display=swap">
+<style>
+  :root { --navy: #0b2945; --navy-deep: #071d32; --blue: #0879e3; --paper: #f7f6f2; --line: #d4dce3; --muted: #486072; --ink: #102b43; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 Manrope, Arial, sans-serif; }
+  main { max-width: 1080px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { margin: 0 0 8px; font-size: 32px; }
+  h2 { margin: 56px 0 6px; font-size: 22px; }
+  p { max-width: 720px; margin: 0 0 16px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .tile { display: grid; place-items: center; min-height: 180px; padding: 32px; border: 1px solid var(--line); border-radius: 4px 28px 4px 4px; }
+  .tile img { display: block; max-width: 100%; }
+  figure { margin: 0; }
+  figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); }
+  figcaption code { color: var(--ink); }
+  .white { background: #fff; } .paper { background: var(--paper); } .dark { background: var(--navy-deep); border-color: var(--navy-deep); } .blue { background: var(--blue); border-color: var(--blue); }
+  .logo img { width: 100%; max-width: 420px; }
+  .compare { display: grid; gap: 12px; padding: 28px; background: var(--navy-deep); border-radius: 4px 28px 4px 4px; }
+  .compare img { width: 100%; max-width: 760px; }
+  .compare span { color: #c5d8e5; font-size: 13px; }
+  .small { display: flex; align-items: end; gap: 28px; flex-wrap: wrap; }
+  .fonts div { padding: 18px 24px; border: 1px solid var(--line); border-radius: 4px; background: #fff; font-size: 44px; line-height: 1.2; }
+  .fonts div small { display: block; font: 600 13px Manrope, sans-serif; color: var(--muted); }
+  .fonts .pick { border-color: var(--blue); box-shadow: inset 4px 0 0 var(--blue); }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatches div { width: 200px; padding: 72px 14px 12px; border-radius: 4px; color: #fff; font-size: 13px; }
+  ul { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Marca PhaifferTech</h1>
+  <p>Versão vetorial do logotipo, redesenhada a partir das imagens atuais. Nada aqui está no site ainda: esta página serve para você aprovar ou pedir ajustes.</p>
+
+  <h2>1. Antes e depois</h2>
+  <p>Em cima, o PNG atual. Embaixo, o vetor. O símbolo segue a geometria do <code>symbol.png</code> (o ícone do site), e as letras são da fonte Readex Pro, a mais próxima das letras geradas pelo ChatGPT.</p>
+  <div class="compare">
+    <span>Atual (imagem)</span><img src="../../public/brand/logo-light.png" alt="Logo atual">
+    <span>Vetor</span><img src="svg/phaiffertech-logo-claro.svg" alt="Logo vetorial">
+  </div>
+
+  <h2>2. Logotipo</h2>
+  <p>A versão para fundo claro usa as cores do símbolo: navy para o negócio, azul para a tecnologia.</p>
+  <div class="grid">
+    <figure><div class="tile logo white"><img src="svg/phaiffertech-logo-cor.svg" alt=""></div><figcaption><strong>Cor, fundo claro</strong> · <code>logo-cor</code></figcaption></figure>
+    <figure><div class="tile logo dark"><img src="svg/phaiffertech-logo-claro.svg" alt=""></div><figcaption><strong>Cor, fundo escuro</strong> (o do site) · <code>logo-claro</code></figcaption></figure>
+    <figure><div class="tile logo paper"><img src="svg/phaiffertech-logo-navy.svg" alt=""></div><figcaption><strong>Uma cor, navy</strong>: impressão em uma cor, carimbo, documentos · <code>logo-navy</code></figcaption></figure>
+    <figure><div class="tile logo blue"><img src="svg/phaiffertech-logo-branco.svg" alt=""></div><figcaption><strong>Uma cor, branco</strong>: sobre foto ou fundo colorido · <code>logo-branco</code></figcaption></figure>
+  </div>
+
+  <h2>3. Símbolo</h2>
+  <div class="grid">
+    <figure><div class="tile white"><img src="svg/phaiffertech-simbolo-cor.svg" alt="" width="140"></div><figcaption><code>simbolo-cor</code></figcaption></figure>
+    <figure><div class="tile dark"><img src="svg/phaiffertech-simbolo-claro.svg" alt="" width="140"></div><figcaption><code>simbolo-claro</code></figcaption></figure>
+    <figure><div class="tile paper"><img src="svg/phaiffertech-simbolo-navy.svg" alt="" width="140"></div><figcaption><code>simbolo-navy</code></figcaption></figure>
+    <figure><div class="tile blue"><img src="svg/phaiffertech-simbolo-branco.svg" alt="" width="140"></div><figcaption><code>simbolo-branco</code></figcaption></figure>
+  </div>
+  <p style="margin-top:24px">Tamanhos pequenos (ícone de aba, avatar):</p>
+  <div class="small">
+    <img src="svg/phaiffertech-simbolo-cor.svg" alt="" width="16"><img src="svg/phaiffertech-simbolo-cor.svg" alt="" width="32"><img src="svg/phaiffertech-simbolo-cor.svg" alt="" width="48">
+    <img src="svg/phaiffertech-avatar.svg" alt="" width="96" style="border-radius:50%;border:1px solid var(--line)">
+    <img src="svg/phaiffertech-logo-cor.svg" alt="" width="160">
+  </div>
+
+  <h2>4. Fonte das letras</h2>
+  <p>Comparei 40 fontes gratuitas com as letras do logo, letra a letra. A Readex Pro (peso 600) foi a mais parecida e está no vetor. As outras ficam como referência. A Manrope continua sendo a fonte do texto do site.</p>
+  <div class="grid fonts">
+    <div class="pick" style="font-family:'Readex Pro';font-weight:600">PhaifferTech<small>Readex Pro 600 · escolhida (87,8% de semelhança)</small></div>
+    <div style="font-family:Lexend;font-weight:650">PhaifferTech<small>Lexend 650 · 86,0%</small></div>
+    <div style="font-family:'Plus Jakarta Sans';font-weight:800">PhaifferTech<small>Plus Jakarta Sans 800 · 78,4%</small></div>
+    <div style="font-family:Manrope;font-weight:800">PhaifferTech<small>Manrope 800 (texto do site) · 75,8%</small></div>
+  </div>
+
+  <h2>5. Cores</h2>
+  <div class="swatches">
+    <div style="background:#0b2945">Navy · negócio<br><strong>#0B2945</strong><br>RGB 11 41 69</div>
+    <div style="background:#0879e3">Azul · tecnologia<br><strong>#0879E3</strong><br>RGB 8 121 227</div>
+    <div style="background:#f7f6f2;color:#102b43;border:1px solid var(--line)">Fundo claro<br><strong>#F7F6F2</strong><br>RGB 247 246 242</div>
+  </div>
+
+  <h2>6. Regras de uso</h2>
+  <ul>
+    <li>Deixe ao redor do logo um espaço livre de pelo menos a altura do "P".</li>
+    <li>Tamanho mínimo: 120 px de largura no digital (3 cm impresso). Abaixo disso, use só o símbolo.</li>
+    <li>Fundo claro: <code>logo-cor</code>. Fundo escuro: <code>logo-claro</code>. Foto ou cor forte: <code>logo-branco</code>.</li>
+    <li>Não esticar, girar, trocar as cores das peças, aplicar sombra ou contorno.</li>
+    <li>Use o SVG sempre que possível (site, gráfica, apresentações). Use o PNG em e-mail, Word e redes sociais.</li>
+  </ul>
+</main>
+</body>
+</html>

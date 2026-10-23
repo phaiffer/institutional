@@ -25,7 +25,7 @@
 .table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
 .table caption { text-align: left; font-weight: 700; padding-bottom: 14px; }
 .table th, .table td { border-bottom: 1px solid var(--line); padding: 12px 16px; vertical-align: top; }
-.table thead { background: #e7eef5; }
+.table thead { background: light-dark(#e7eef5, #132c44); }
 .table td:nth-child(2) { font-variant-numeric: tabular-nums; }
 .note { font-size: 13px; margin: 16px 0 0; }
 
@@ -37,7 +37,7 @@
 .wideChart { margin-top: 40px; }
 .wideChart img { background: #fff; }
 
-.drift { margin-top: 40px; padding: 24px 28px; border-left: 3px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; background: #eef4fa; }
+.drift { margin-top: 40px; padding: 24px 28px; border-left: 3px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; background: light-dark(#eef4fa, #12314f); }
 .drift h3 { font-size: 21px; margin-bottom: 10px; }
 .drift p { max-width: 850px; margin: 0; color: var(--muted); }
 

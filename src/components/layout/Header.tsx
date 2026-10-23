@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "@/components/interactive/ThemeToggle";
 import { contactHref, navigation } from "@/data/site";
 
 const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
@@ -30,9 +31,10 @@ export function Header() {
 
   return <header className={`site-header${scrolled ? " is-scrolled" : ""}`} id="topo">
     <div className="container nav-row">
-      <Link className="brand" href="/" aria-label="PhaifferTech, página inicial"><Image src="/brand/logo-light-400.png" width={400} height={76} alt="PhaifferTech" priority /></Link>
+      <Link className="brand" href="/" aria-label="PhaifferTech, página inicial"><Image src="/brand/logo-claro.svg" width={941} height={169} alt="PhaifferTech" priority /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={current(item.href)}>{item.label}</Link>)}</nav>
       <Link className="nav-contact" href={contactHref} aria-current={current(contactHref)}>Vamos conversar</Link>
+      <ThemeToggle />
       <button className="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded={open} aria-label={open ? "Fechar menu" : "Abrir menu"} onClick={() => setOpen(!open)}><span /><span /><span /></button>
     </div>
     <nav id="mobile-nav" className="mobile-nav" aria-label="Navegação móvel" hidden={!open}>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/interactive/ThemeToggle";
 import { site } from "@/data/site";
 
 // Cabeçalho, área principal e rodapé comuns às páginas de demonstração.
@@ -10,9 +11,12 @@ export function DemoShell({ children }: { children: React.ReactNode }) {
       <header className="demo-header">
         <div className="container demo-header-inner">
           <Link className="brand" href="/" aria-label="PhaifferTech, página inicial">
-            <Image src="/brand/logo-light-400.png" width={400} height={76} alt="PhaifferTech" priority />
+            <Image src="/brand/logo-claro.svg" width={941} height={169} alt="PhaifferTech" priority />
           </Link>
-          <nav aria-label="Navegação da demonstração"><Link className="demo-back" href="/projetos/"><span aria-hidden="true">←</span> Voltar aos projetos</Link></nav>
+          <div className="demo-header-tools">
+            <nav aria-label="Navegação da demonstração"><Link className="demo-back" href="/projetos/"><span aria-hidden="true">←</span> Voltar aos projetos</Link></nav>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
       <main id="conteudo" className="container demo-main">{children}</main>

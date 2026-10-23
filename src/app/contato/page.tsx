@@ -19,7 +19,9 @@ export default function ContactPage() {
         <div className="contact-box section-more">
           <p className="eyebrow">E-mail</p>
           <a className="contact-email" href={`mailto:${site.email}`}>{site.email}</a>
-          <div className="contact-actions"><CopyButton text={site.email} label="Copiar e-mail" className="button button-outline" /></div>
+          <p className="eyebrow">WhatsApp</p>
+          <a className="contact-email" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">{site.whatsapp.label}</a>
+          <div className="contact-actions"><a className="button button-primary" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">Conversar no WhatsApp <span aria-hidden="true">↗</span></a><CopyButton text={site.email} label="Copiar e-mail" className="button button-outline" /></div>
         </div>
       </div>
       <div data-reveal><ContactForm to={site.email} /></div>

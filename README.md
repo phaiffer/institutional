@@ -37,13 +37,18 @@ npm test
 - `src/components/diagrams`: mapa do hero e diagramas de arquitetura das áreas de atuação.
 - `src/components/interactive` e `src/components/motion`: abas, botão de copiar, contagem e revelação ao rolar.
 - `src/data/site.ts`: conteúdo (áreas, situações, projetos, etapas, contato). `src/data/metadata.ts`: metadados das páginas.
-- `public/brand`: logotipo, símbolo, banner e ícones. `public/CNAME`: domínio.
+- `public/brand`: logotipo vetorial (`logo-claro.svg`), ícones (`icon.svg` muda de cor com o tema do navegador), originais em PNG e banner. `public/CNAME`: domínio.
+- `docs/marca`: kit da marca em SVG e PNG (logo, símbolo, avatar e fotos de perfil do WhatsApp), fonte do logotipo (Readex Pro, licença OFL) e `revisao.html` com as regras de uso.
 - `public/demos/*`: capturas, gráficos e registros usados pelas páginas de demonstração.
 - `tests`: verificações do HTML exportado.
 
 ## Movimento
 
 As animações acontecem uma vez (o mapa do hero percorre as etapas, os diagramas desenham os conectores, os números contam até o valor real, as seções aparecem ao rolar). Um script no `<head>` só as ativa quando o visitante não pediu movimento reduzido; sem JavaScript, todo o conteúdo fica visível.
+
+## Temas claro e escuro
+
+O site segue o tema do sistema. O botão no cabeçalho troca o tema e grava a escolha no navegador (`localStorage.theme`). O script do `<head>` aplica essa escolha antes da primeira pintura. As cores ficam nos tokens do `:root` em `globals.css`, e o bloco do tema escuro só redefine os tokens. Cabeçalho, hero e rodapé são escuros nos dois temas.
 
 ## Publicação
 
