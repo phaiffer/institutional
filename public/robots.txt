@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://phaiffertech.com.br/sitemap.xml

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lakehouse NYC TLC | Estudo de caso | PhaifferTech</title>
+  <meta name="description" content="Estudo de caso: lakehouse com Spark e Delta Lake sobre viagens públicas de táxi de Nova York.">
+  <link rel="icon" href="../../../public/brand/symbol.png">
+  <link rel="stylesheet" href="assets/proto.css">
+  <script src="assets/proto.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="header on-dark">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="PhaifferTech, página inicial"><img src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="solucoes.html">Soluções</a>
+      <a href="projetos.html" aria-current="page">Projetos</a>
+      <a href="como-trabalhamos.html">Como trabalhamos</a>
+      <a class="nav-cta" href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <header class="page-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Você está em"><a href="projetos.html">Projetos</a><span aria-hidden="true">/</span><span>Lakehouse NYC TLC</span></nav>
+      <p class="label"><b>Estudo de caso</b> / Demonstração técnica</p>
+      <h1>Quase 6 milhões de viagens, <span class="t-tec">e a origem de cada linha removida</span>.</h1>
+      <p class="lead">Um lakehouse com Spark e Delta Lake sobre os dados públicos de táxi de Nova York, construído para mostrar como um pipeline pode explicar os próprios números.</p>
+      <dl class="case-facts">
+        <div><dt>Tipo</dt><dd>Demonstração técnica</dd></div>
+        <div><dt>Dados</dt><dd>NYC TLC, jan. e fev. de 2024</dd></div>
+        <div><dt>Execução</dt><dd>Local, registrada</dd></div>
+        <div><dt>Código</dt><dd><a class="link" href="https://github.com/phaiffer/nyc-tlc-lakehouse" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="wrap with-rail">
+      <nav class="rail" aria-label="Nesta página" data-rail>
+        <ol>
+          <li><a href="#problema"><span>01</span>Problema</a></li>
+          <li><a href="#arquitetura"><span>02</span>Arquitetura</a></li>
+          <li><a href="#execucao"><span>03</span>Execução</a></li>
+          <li><a href="#leitura"><span>04</span>Leitura do drift</a></li>
+          <li><a href="#limites"><span>05</span>Limites</a></li>
+        </ol>
+      </nav>
+
+      <div>
+        <section class="discipline prose" id="problema" aria-labelledby="h-problema">
+          <p class="label"><b>01</b> / Problema</p>
+          <h2 id="h-problema">Um número só merece confiança quando dá para refazer a conta.</h2>
+          <p>Em muitas empresas, a diferença entre o total de um sistema e o total de um relatório some em filtros que ninguém documentou. Esta demonstração usa um conjunto público grande e imperfeito para mostrar o oposto: cada linha que sai do fluxo é contada e associada à regra que a removeu.</p>
+        </section>
+
+        <section class="discipline" id="arquitetura" aria-labelledby="h-arquitetura">
+          <p class="label"><b>02</b> / Arquitetura</p>
+          <h2 id="h-arquitetura">Três camadas e um conjunto de controles.</h2>
+          <div class="diagram" data-diagram>
+            <p class="diagram-title"><strong>Fluxo mensal</strong><span>Selecione uma camada</span></p>
+            <div class="flow-wrap">
+              <svg class="wires" aria-hidden="true"></svg>
+              <ol class="flow">
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="true" data-detail="Arquivo mensal público da Taxi and Limousine Commission de Nova York, em Parquet."><small>Fonte</small><strong>NYC TLC</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="O arquivo do mês é normalizado e gravado em Delta, já restrito à janela do mês processado."><small>Camada</small><strong>Bronze</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Limpeza, deduplicação e contrato versionado. Cada linha removida é atribuída à primeira regra que a rejeitou."><small>Camada</small><strong>Silver</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Agregação por dia e por fornecedor, pronta para gráficos e consultas."><small>Camada</small><strong>Gold</strong></button></li>
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="false" data-detail="Seis regras de qualidade por execução e comparação de perfis entre meses para detectar drift."><small>Controle</small><strong>Qualidade e drift</strong></button></li>
+              </ol>
+            </div>
+            <div class="node-detail" aria-live="polite"><h4></h4><p></p></div>
+          </div>
+        </section>
+
+        <section class="discipline" id="execucao" aria-labelledby="h-execucao">
+          <p class="label"><b>03</b> / Execução registrada</p>
+          <h2 id="h-execucao">O balanço fecha, mês a mês.</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Linhas por camada</caption>
+              <thead><tr><th scope="col">Mês</th><th class="num" scope="col">Bronze</th><th class="num" scope="col">Silver</th><th class="num" scope="col">Removidas</th><th class="num" scope="col">Gold</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Janeiro/2024</th><td class="num">2.964.606</td><td class="num">2.926.167</td><td class="num">38.439</td><td class="num">85</td></tr>
+                <tr><th scope="row">Fevereiro/2024</th><td class="num">3.007.511</td><td class="num">2.965.974</td><td class="num">41.537</td><td class="num">58</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Linhas removidas por regra</caption>
+              <thead><tr><th scope="col">Regra</th><th class="num" scope="col">Janeiro</th><th class="num" scope="col">Fevereiro</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Tarifa negativa ou ausente</th><td class="num">37.443</td><td class="num">40.653</td></tr>
+                <tr><th scope="row">Duração não positiva</th><td class="num">870</td><td class="num">803</td></tr>
+                <tr><th scope="row">Viagem duplicada</th><td class="num">126</td><td class="num">81</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="feature-media case-chart">
+            <img src="../../../public/demos/nyc-tlc/trips_daily.svg" width="1200" height="574" alt="Viagens diárias por fornecedor em janeiro e fevereiro de 2024, calculadas a partir da camada Gold" loading="lazy">
+          </figure>
+        </section>
+
+        <section class="discipline prose" id="leitura" aria-labelledby="h-leitura">
+          <p class="label"><b>04</b> / Leitura do drift</p>
+          <h2 id="h-leitura">Um alerta que tem explicação.</h2>
+          <p>A comparação entre os meses gerou um alerta: a camada Gold caiu de 85 para 58 linhas. O motivo aparece nos próprios dados. Janeiro tem 31 dias com dois fornecedores principais e mais 23 linhas de um terceiro fornecedor, que registrou 208 viagens no mês e não aparece em fevereiro. Fevereiro tem 29 dias, com os dois fornecedores principais.</p>
+          <p>O alerta não é um erro do pipeline. É o pipeline avisando que a forma dos dados mudou, para que alguém confirme antes de usar o número.</p>
+        </section>
+
+        <section id="limites" aria-labelledby="h-limites">
+          <div class="limits on-dark">
+            <h3 id="h-limites">Limites desta demonstração</h3>
+            <ul>
+              <li>Execução local com dados públicos; não representa operação em produção nem resultados de clientes.</li>
+              <li>O recorte cobre dois meses do arquivo de táxis amarelos.</li>
+              <li>O código e o registro da execução estão no repositório público, no commit <code>300c16c</code>.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><img class="brand" src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"><p>Engenharia de software e dados.<br>Conectamos tecnologia ao seu negócio.</p></div>
+      <nav aria-label="Rodapé"><h2>Site</h2><ul><li><a href="solucoes.html">Soluções</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="como-trabalhamos.html">Como trabalhamos</a></li><li><a href="contato.html">Contato</a></li></ul></nav>
+      <div><h2>Contato</h2><ul><li><a href="mailto:phaiffertech@gmail.com">phaiffertech@gmail.com</a></li><li><a href="https://phaiffertech.com.br">phaiffertech.com.br</a></li></ul></div>
+    </div>
+    <div class="footer-base"><span>© 2026 PhaifferTech</span><span>Protótipo de navegação, não publicado</span></div>
+  </div>
+</footer>
+</body>
+</html>

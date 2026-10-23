@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | PhaifferTech</title>
+  <meta name="description" content="Fale com a PhaifferTech sobre um projeto de software, dados, arquitetura ou integração.">
+  <link rel="icon" href="../../../public/brand/symbol.png">
+  <link rel="stylesheet" href="assets/proto.css">
+  <script src="assets/proto.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="header on-dark">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="PhaifferTech, página inicial"><img src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="solucoes.html">Soluções</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="como-trabalhamos.html">Como trabalhamos</a>
+      <a class="nav-cta" href="contato.html" aria-current="page">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="label"><b>Contato</b> / Primeira conversa</p>
+        <h1 class="contact-title">O que está travando <span class="t-tec">sua operação?</span></h1>
+        <p class="lead">Conte o problema, os sistemas envolvidos e o que gostaria de melhorar. Não é preciso saber qual tecnologia usar; isso faz parte da conversa.</p>
+        <div class="contact-box on-dark more">
+          <small>Prefere escrever direto?</small>
+          <a class="mail" href="mailto:phaiffertech@gmail.com">phaiffertech@gmail.com</a>
+          <button class="btn btn-secondary" type="button" data-copy="phaiffertech@gmail.com" aria-describedby="copy-direct">Copiar e-mail</button>
+          <p class="copy-status" id="copy-direct" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div>
+        <form class="form" data-contact data-to="phaiffertech@gmail.com" novalidate aria-describedby="form-help">
+          <p id="form-help" class="hint">Ao continuar, seu programa de e-mail abre com a mensagem pronta. Nada é enviado por este site.</p>
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input id="f-nome" name="nome" autocomplete="name" required aria-describedby="e-nome">
+            <span class="error" id="e-nome"></span>
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
+            <span class="error" id="e-email"></span>
+          </div>
+          <div class="field">
+            <label for="f-empresa">Empresa <span class="hint">(opcional)</span></label>
+            <input id="f-empresa" name="empresa" autocomplete="organization">
+          </div>
+          <fieldset class="field">
+            <legend>Assunto <span class="hint">(opcional)</span></legend>
+            <div class="choices">
+              <label><input type="radio" name="assunto" value="Software"><span>Software</span></label>
+              <label><input type="radio" name="assunto" value="Dados"><span>Dados</span></label>
+              <label><input type="radio" name="assunto" value="Arquitetura e cloud"><span>Arquitetura e cloud</span></label>
+              <label><input type="radio" name="assunto" value="Integração e automação"><span>Integração</span></label>
+              <label><input type="radio" name="assunto" value="Ainda não sei"><span>Ainda não sei</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="f-mensagem">O que está acontecendo?</label>
+            <span class="hint" id="h-mensagem">Por exemplo: quais sistemas a equipe usa, o que é feito à mão, o que gostaria que mudasse.</span>
+            <textarea id="f-mensagem" name="mensagem" required aria-describedby="h-mensagem e-mensagem"></textarea>
+            <span class="error" id="e-mensagem"></span>
+          </div>
+          <div class="actions"><button class="btn btn-primary" type="submit">Preparar e-mail <span aria-hidden="true">→</span></button></div>
+        </form>
+
+        <div class="form-status" id="form-status" hidden>
+          <h2 tabindex="-1">Mensagem pronta no seu programa de e-mail</h2>
+          <p>Confira o texto e envie por lá. Se o programa não abriu, use um dos botões abaixo.</p>
+          <div class="actions">
+            <a class="btn btn-primary" data-mailto href="mailto:phaiffertech@gmail.com">Abrir de novo</a>
+            <button class="btn btn-secondary" type="button" data-copy="" aria-describedby="copy-form">Copiar a mensagem</button>
+          </div>
+          <p class="copy-status" id="copy-form" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><img class="brand" src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"><p>Engenharia de software e dados.<br>Conectamos tecnologia ao seu negócio.</p></div>
+      <nav aria-label="Rodapé"><h2>Site</h2><ul><li><a href="solucoes.html">Soluções</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="como-trabalhamos.html">Como trabalhamos</a></li><li><a href="contato.html">Contato</a></li></ul></nav>
+      <div><h2>Contato</h2><ul><li><a href="mailto:phaiffertech@gmail.com">phaiffertech@gmail.com</a></li><li><a href="https://phaiffertech.com.br">phaiffertech.com.br</a></li></ul></div>
+    </div>
+    <div class="footer-base"><span>© 2026 PhaifferTech</span><span>Protótipo de navegação, não publicado</span></div>
+  </div>
+</footer>
+</body>
+</html>

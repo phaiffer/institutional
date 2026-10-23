@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projetos | PhaifferTech</title>
+  <meta name="description" content="Produtos próprios, demonstrações técnicas e contribuições open source da PhaifferTech.">
+  <link rel="icon" href="../../../public/brand/symbol.png">
+  <link rel="stylesheet" href="assets/proto.css">
+  <script src="assets/proto.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="header on-dark">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="PhaifferTech, página inicial"><img src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="solucoes.html">Soluções</a>
+      <a href="projetos.html" aria-current="page">Projetos</a>
+      <a href="como-trabalhamos.html">Como trabalhamos</a>
+      <a class="nav-cta" href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="label"><b>Projetos</b> / Portfólio</p>
+      <h1>Evidências, <span class="t-tec">não promessas</span>.</h1>
+      <p class="lead">Cada ficha diz o que o projeto é, em que estágio está, o que demonstra e onde conferir. Esta página reúne apenas trabalhos que podem ser mostrados publicamente.</p>
+    </div>
+  </header>
+
+  <section class="section" aria-label="Lista de projetos">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filtrar por categoria" data-filters>
+        <button type="button" data-filter="todos" aria-pressed="true">Todos <span>5</span></button>
+        <button type="button" data-filter="produto" aria-pressed="false">Produtos próprios <span>2</span></button>
+        <button type="button" data-filter="demo" aria-pressed="false">Demonstrações técnicas <span>2</span></button>
+        <button type="button" data-filter="opensource" aria-pressed="false">Open source <span>1</span></button>
+      </div>
+      <p class="result-count" aria-live="polite" data-count>5 projetos</p>
+
+      <ul class="fichas">
+        <li class="ficha" id="nyc" data-kind-item="demo">
+          <a class="ficha-media" href="caso-nyc-tlc.html" tabindex="-1" aria-hidden="true"><img src="../../../public/demos/nyc-tlc/card.png" width="1600" height="1000" alt="" loading="lazy"></a>
+          <div>
+            <p class="kind" data-kind="demo">Demonstração técnica</p>
+            <h2>Lakehouse NYC TLC com Spark e Delta Lake</h2>
+            <p>Viagens públicas de táxi de Nova York processadas em camadas Bronze, Silver e Gold, com contrato versionado, regras de qualidade e monitoramento de drift entre meses.</p>
+            <dl>
+              <dt>Estágio</dt><dd><span class="stage">Execução local registrada</span></dd>
+              <dt>Demonstra</dt><dd>Rastreabilidade: cada linha removida fica associada à regra que a removeu.</dd>
+              <dt>Tecnologias</dt><dd>Python, PySpark, Delta Lake</dd>
+              <dt>Evidência</dt><dd>5.892.141 viagens limpas em janeiro e fevereiro de 2024; commit <code>300c16c</code> com CI aprovada.</dd>
+            </dl>
+            <div class="actions"><a class="btn btn-primary" href="caso-nyc-tlc.html">Estudo de caso <span aria-hidden="true">→</span></a><a class="btn btn-secondary" href="https://github.com/phaiffer/nyc-tlc-lakehouse" target="_blank" rel="noopener noreferrer">Código no GitHub <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </li>
+
+        <li class="ficha" id="tricologia" data-kind-item="produto">
+          <div class="ficha-media"><img src="../../../public/demos/trichology/score.webp" width="1440" height="1027" alt="Tela de pontuação capilar de uma paciente fictícia, com a contribuição de cada resposta" loading="lazy"></div>
+          <div>
+            <p class="kind" data-kind="produto">Produto próprio</p>
+            <h2>Plataforma Clínica de Tricologia</h2>
+            <p>Aplicação web para o atendimento em tricologia: prontuário, anamnese configurável, pontuação capilar explicada resposta a resposta, fotos de evolução e laudos em PDF.</p>
+            <dl>
+              <dt>Estágio</dt><dd><span class="stage">Em desenvolvimento · execução local</span></dd>
+              <dt>Demonstra</dt><dd>Regras de negócio explicáveis e histórico preservado quando um modelo de anamnese muda.</dd>
+              <dt>Tecnologias</dt><dd>Next.js, Spring Boot 3.3 com Java 21, PostgreSQL com Flyway</dd>
+              <dt>Evidência</dt><dd>Repositório público; testes de integração no backend; capturas com dados fictícios.</dd>
+              <dt>Limites</dt><dd>Proteção contra CSRF pendente antes de qualquer uso fora do ambiente local.</dd>
+            </dl>
+            <div class="actions"><a class="btn btn-secondary" href="https://github.com/phaiffer/trichology-clinic-platform" target="_blank" rel="noopener noreferrer">Código no GitHub <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </li>
+
+        <li class="ficha" id="pet" data-kind-item="produto">
+          <div class="ficha-media"><img src="../../../public/demos/pet-platform/dashboard.webp" width="1600" height="1000" alt="Painel operacional da plataforma pet com indicadores fictícios" loading="lazy"></div>
+          <div>
+            <p class="kind" data-kind="produto">Produto próprio</p>
+            <h2>Plataforma de Gestão para Negócios Pet</h2>
+            <p>Aplicação em desenvolvimento para reunir rotinas de pet shops, banho e tosa e clínicas veterinárias: agenda, estoque, cobrança e rotinas clínicas.</p>
+            <dl>
+              <dt>Estágio</dt><dd><span class="stage">Em desenvolvimento</span></dd>
+              <dt>Demonstra</dt><dd>Vários fluxos operacionais conectados em uma mesma aplicação.</dd>
+              <dt>Evidência</dt><dd>Capturas do ambiente de demonstração, com dados fictícios.</dd>
+              <dt>Limites</dt><dd>Sem nome comercial definido; não está em operação comercial.</dd>
+            </dl>
+            <div class="actions"><a class="btn btn-secondary" href="https://github.com/phaiffer/phaiffertech" target="_blank" rel="noopener noreferrer">Acompanhar no GitHub <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </li>
+
+        <li class="ficha" id="lakehouse-local" data-kind-item="demo">
+          <div class="ficha-media"><img src="../../../public/demos/data-platform/overview.png" width="1440" height="1025" alt="Showcase da plataforma de dados local, com camadas e resultados da amostra" loading="lazy"></div>
+          <div>
+            <p class="kind" data-kind="demo">Demonstração técnica</p>
+            <h2>Plataforma de Dados, Lakehouse Local</h2>
+            <p>Dois conjuntos públicos históricos da FiveThirtyEight, da ingestão em Parquet aos modelos analíticos com dbt e DuckDB, com verificações de qualidade.</p>
+            <dl>
+              <dt>Estágio</dt><dd><span class="stage">Execução local registrada</span></dd>
+              <dt>Demonstra</dt><dd>Camadas Bronze, Silver e Gold com testes de dados a cada execução.</dd>
+              <dt>Tecnologias</dt><dd>Python, Parquet, dbt, DuckDB, Great Expectations</dd>
+              <dt>Evidência</dt><dd>Registro de 20/10/2026 com 14 testes dbt e 7 verificações de qualidade aprovados.</dd>
+              <dt>Limites</dt><dd>Dados ilustrativos sobre cinema; não é uma operação industrial.</dd>
+            </dl>
+            <div class="actions"><a class="btn btn-secondary" href="https://github.com/phaiffer/enterprise-industrial-data-platform" target="_blank" rel="noopener noreferrer">Código no GitHub <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </li>
+
+        <li class="ficha" id="egc" data-kind-item="opensource">
+          <div class="ficha-media is-empty">Vídeos públicos: <br>EGC Demo v2, por Willian Phaiffer<br>EGC Pitch EGCxSOL, por Felipe Marzochi</div>
+          <div>
+            <p class="kind" data-kind="opensource">Open source · contribuição individual</p>
+            <h2>Extended Global Context (EGC)</h2>
+            <p>Projeto aberto dedicado a ferramentas e gestão de contexto no desenvolvimento assistido por IA.</p>
+            <dl>
+              <dt>Participação</dt><dd>Contribuição individual, sem titularidade da PhaifferTech.</dd>
+              <dt>Demonstra</dt><dd>Trabalho em projeto aberto, com revisão e colaboração pública.</dd>
+            </dl>
+            <div class="actions"><a class="btn btn-secondary" href="https://github.com/Fmarzochi/EGC" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="https://youtu.be/A8M_98WdI0Q" target="_blank" rel="noopener noreferrer">EGC Demo v2 <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><img class="brand" src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"><p>Engenharia de software e dados.<br>Conectamos tecnologia ao seu negócio.</p></div>
+      <nav aria-label="Rodapé"><h2>Site</h2><ul><li><a href="solucoes.html">Soluções</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="como-trabalhamos.html">Como trabalhamos</a></li><li><a href="contato.html">Contato</a></li></ul></nav>
+      <div><h2>Contato</h2><ul><li><a href="mailto:phaiffertech@gmail.com">phaiffertech@gmail.com</a></li><li><a href="https://phaiffertech.com.br">phaiffertech.com.br</a></li></ul></div>
+    </div>
+    <div class="footer-base"><span>© 2026 PhaifferTech</span><span>Protótipo de navegação, não publicado</span></div>
+  </div>
+</footer>
+</body>
+</html>

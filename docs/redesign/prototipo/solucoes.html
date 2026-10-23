@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soluções | PhaifferTech</title>
+  <meta name="description" content="Engenharia de software, engenharia de dados, arquitetura e cloud, integração e automação.">
+  <link rel="icon" href="../../../public/brand/symbol.png">
+  <link rel="stylesheet" href="assets/proto.css">
+  <script src="assets/proto.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="header on-dark">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="PhaifferTech, página inicial"><img src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="solucoes.html" aria-current="page">Soluções</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="como-trabalhamos.html">Como trabalhamos</a>
+      <a class="nav-cta" href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="label"><b>Soluções</b> / O que fazemos</p>
+      <h1>Quatro disciplinas, <span class="t-tec">um mesmo problema</span>.</h1>
+      <p class="lead">Raramente um problema pertence a uma única área. Uma integração depende de arquitetura; um painel depende de dados confiáveis. Combinamos as disciplinas conforme o caso.</p>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="wrap with-rail">
+      <nav class="rail" aria-label="Nesta página" data-rail>
+        <ol>
+          <li><a href="#software"><span>01</span>Software</a></li>
+          <li><a href="#dados"><span>02</span>Dados</a></li>
+          <li><a href="#arquitetura"><span>03</span>Arquitetura e cloud</a></li>
+          <li><a href="#integracao"><span>04</span>Integração</a></li>
+        </ol>
+      </nav>
+
+      <div>
+        <section class="discipline" id="software" aria-labelledby="h-software">
+          <p class="label"><b>01</b> / Engenharia de software</p>
+          <h2 id="h-software">Aplicações que acompanham o processo real.</h2>
+          <p class="lead">Projetamos e desenvolvemos aplicações, plataformas e APIs sob medida, para sistemas que precisam nascer, integrar ou evoluir.</p>
+          <div class="cols">
+            <div><h3 class="label">Quando faz sentido</h3><ul class="plain"><li>O processo não cabe em uma ferramenta pronta.</li><li>Um sistema existente precisa evoluir sem parar a operação.</li><li>Vários sistemas precisam de uma API em comum.</li></ul></div>
+            <div><h3 class="label">O que entregamos</h3><ul class="plain"><li>Aplicações web e sistemas corporativos.</li><li>Plataformas SaaS.</li><li>APIs e microsserviços.</li><li>Modernização de aplicações.</li></ul></div>
+          </div>
+          <div class="diagram" data-diagram>
+            <p class="diagram-title"><strong>Camadas de uma aplicação</strong><span>Selecione um componente</span></p>
+            <div class="flow-wrap">
+              <svg class="wires" aria-hidden="true"></svg>
+              <ol class="flow">
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="true" data-detail="Perfis, permissões e a rotina real de cada pessoa. A aplicação começa por esse levantamento, não pela tela."><small>01</small><strong>Quem usa</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Telas pensadas para a tarefa: menos campos, estados claros e funcionamento no celular quando a rotina pede."><small>02</small><strong>Interface</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Contratos estáveis entre a interface, as regras e outros sistemas, com autenticação e validação na entrada."><small>03</small><strong>API</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Onde ficam cálculos e decisões do processo, isolados e cobertos por testes, para mudar sem quebrar o resto."><small>04</small><strong>Regras de negócio</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Modelo de dados e migrações versionadas, para que a estrutura evolua junto com o sistema."><small>05</small><strong>Banco de dados</strong></button></li>
+              </ol>
+            </div>
+            <div class="node-detail" aria-live="polite"><h4></h4><p></p></div>
+          </div>
+          <div class="evidence"><b>Onde ver</b><a class="link" href="projetos.html#tricologia">Plataforma Clínica de Tricologia</a><span>Next.js, Spring Boot, PostgreSQL com migrações Flyway e perfis de acesso.</span></div>
+        </section>
+
+        <section class="discipline" id="dados" aria-labelledby="h-dados">
+          <p class="label"><b>02</b> / Engenharia de dados</p>
+          <h2 id="h-dados">Números que podem ser explicados.</h2>
+          <p class="lead">Transformamos fontes dispersas em fluxos e estruturas úteis para análise, com regras de qualidade escritas e origem rastreável.</p>
+          <div class="cols">
+            <div><h3 class="label">Quando faz sentido</h3><ul class="plain"><li>Cada área chega com um número diferente.</li><li>Relatórios são montados à mão toda semana.</li><li>A informação está espalhada em sistemas e planilhas.</li></ul></div>
+            <div><h3 class="label">O que entregamos</h3><ul class="plain"><li>Arquitetura de dados.</li><li>Pipelines ETL e ELT.</li><li>Data lakes e lakehouses.</li><li>Qualidade e governança de dados.</li><li>Analytics e BI.</li></ul></div>
+          </div>
+          <div class="diagram" data-diagram>
+            <p class="diagram-title"><strong>Fluxo de dados em camadas</strong><span>Selecione um componente</span></p>
+            <div class="flow-wrap">
+              <svg class="wires" aria-hidden="true"></svg>
+              <ol class="flow">
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="true" data-detail="Sistemas, arquivos e APIs onde a informação nasce. O primeiro passo é saber quem responde por cada fonte e com que frequência ela muda."><small>01</small><strong>Fontes</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Guarda os dados como chegaram, com data e origem registradas, para que qualquer número possa ser reconstruído."><small>02</small><strong>Ingestão</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Padroniza tipos, remove duplicatas e aplica regras escritas. Cada linha descartada fica associada à regra que a removeu."><small>03</small><strong>Limpeza e contrato</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Tabelas no formato das perguntas do negócio, verificadas a cada execução e comparadas entre períodos para revelar mudanças inesperadas."><small>04</small><strong>Modelos e qualidade</strong></button></li>
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="false" data-detail="Painéis, relatórios e outros sistemas que usam os dados. É ali que a informação volta a ser decisão."><small>05</small><strong>Consumo</strong></button></li>
+              </ol>
+            </div>
+            <div class="node-detail" aria-live="polite"><h4></h4><p></p></div>
+          </div>
+          <div class="evidence"><b>Onde ver</b><a class="link" href="caso-nyc-tlc.html">Lakehouse NYC TLC</a><a class="link" href="projetos.html#lakehouse-local">Plataforma de Dados, Lakehouse Local</a></div>
+        </section>
+
+        <section class="discipline" id="arquitetura" aria-labelledby="h-arquitetura">
+          <p class="label"><b>03</b> / Arquitetura e cloud</p>
+          <h2 id="h-arquitetura">Decisões técnicas que cabem no contexto.</h2>
+          <p class="lead">Desenhamos soluções que respeitam as restrições e a evolução do negócio, e registramos o porquê de cada escolha.</p>
+          <div class="cols">
+            <div><h3 class="label">Quando faz sentido</h3><ul class="plain"><li>O sistema ficou difícil de manter ou de escalar.</li><li>Há uma migração para a nuvem pela frente.</li><li>Decisões técnicas importantes não estão registradas.</li></ul></div>
+            <div><h3 class="label">O que entregamos</h3><ul class="plain"><li>Modelagem e arquitetura de aplicações.</li><li>Arquitetura em nuvem com AWS, Azure ou GCP.</li><li>Deploy e automação.</li><li>Estratégia de modernização.</li></ul></div>
+          </div>
+          <div class="diagram" data-diagram>
+            <p class="diagram-title"><strong>Decisões de arquitetura</strong><span>Selecione um componente</span></p>
+            <div class="flow-wrap">
+              <svg class="wires" aria-hidden="true"></svg>
+              <ol class="flow">
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="true" data-detail="Volume, equipe, orçamento e prazo. A arquitetura adequada depende dessas restrições antes de depender de tecnologia."><small>01</small><strong>Contexto</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Fronteiras claras entre as partes do sistema, para que cada uma possa mudar sem arrastar as outras."><small>02</small><strong>Módulos</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Como módulos e serviços conversam: APIs, eventos e versões combinadas."><small>03</small><strong>Contratos</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Ambientes, containers, deploy automatizado e configuração fora do código."><small>04</small><strong>Infraestrutura</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Logs, métricas e alertas para saber o que acontece em produção antes que o usuário precise avisar."><small>05</small><strong>Observabilidade</strong></button></li>
+              </ol>
+            </div>
+            <div class="node-detail" aria-live="polite"><h4></h4><p></p></div>
+          </div>
+        </section>
+
+        <section class="discipline" id="integracao" aria-labelledby="h-integracao">
+          <p class="label"><b>04</b> / Integração e automação</p>
+          <h2 id="h-integracao">A informação segue adiante sozinha.</h2>
+          <p class="lead">Conectamos plataformas e reduzimos tarefas repetitivas, mantendo registro do que foi feito e alerta quando algo falha.</p>
+          <div class="cols">
+            <div><h3 class="label">Quando faz sentido</h3><ul class="plain"><li>A mesma informação é digitada em mais de um sistema.</li><li>Uma tarefa repetitiva consome horas toda semana.</li><li>Plataformas da empresa não se comunicam.</li></ul></div>
+            <div><h3 class="label">O que entregamos</h3><ul class="plain"><li>Integração de APIs.</li><li>Automação de processos.</li><li>Comunicação entre plataformas.</li><li>Fluxos personalizados.</li></ul></div>
+          </div>
+          <div class="diagram" data-diagram>
+            <p class="diagram-title"><strong>Percurso de uma integração</strong><span>Selecione um componente</span></p>
+            <div class="flow-wrap">
+              <svg class="wires" aria-hidden="true"></svg>
+              <ol class="flow">
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="true" data-detail="Onde o fato acontece: uma venda, um agendamento, um cadastro."><small>01</small><strong>Sistema de origem</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="O registro do que aconteceu, enviado por webhook ou lido por API, com um identificador para evitar duplicidade."><small>02</small><strong>Evento</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Organiza o processamento, aplica transformações e permite tentar de novo quando algo falha."><small>03</small><strong>Fila e regras</strong></button></li>
+                <li><button class="node" type="button" aria-pressed="false" data-detail="Recebe a informação já no formato de que precisa, sem digitação repetida."><small>04</small><strong>Sistema de destino</strong></button></li>
+                <li><button class="node" type="button" data-side="negocio" aria-pressed="false" data-detail="Registro de cada envio e alerta quando algo não chega, para que a equipe possa confiar na automação."><small>05</small><strong>Acompanhamento</strong></button></li>
+              </ol>
+            </div>
+            <div class="node-detail" aria-live="polite"><h4></h4><p></p></div>
+          </div>
+        </section>
+
+        <div class="contact-box on-dark">
+          <small>Próximo passo</small>
+          <p class="mail">Não sabe qual disciplina se aplica? Descreva o problema.</p>
+          <div class="actions"><a class="btn btn-primary" href="contato.html">Falar sobre o projeto <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><img class="brand" src="../../../public/brand/logo-light.png" width="960" height="181" alt="PhaifferTech"><p>Engenharia de software e dados.<br>Conectamos tecnologia ao seu negócio.</p></div>
+      <nav aria-label="Rodapé"><h2>Site</h2><ul><li><a href="solucoes.html">Soluções</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="como-trabalhamos.html">Como trabalhamos</a></li><li><a href="contato.html">Contato</a></li></ul></nav>
+      <div><h2>Contato</h2><ul><li><a href="mailto:phaiffertech@gmail.com">phaiffertech@gmail.com</a></li><li><a href="https://phaiffertech.com.br">phaiffertech.com.br</a></li></ul></div>
+    </div>
+    <div class="footer-base"><span>© 2026 PhaifferTech</span><span>Protótipo de navegação, não publicado</span></div>
+  </div>
+</footer>
+</body>
+</html>
