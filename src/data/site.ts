@@ -31,6 +31,14 @@ export const nycLakehouse = {
   assets: "/demos/nyc-tlc",
 } as const;
 
+export const publicSpending = {
+  title: "Gastos Públicos Federais com dbt e DuckDB",
+  description: "Todo o histórico de recebimentos de recursos do Governo Federal publicado pelo Portal da Transparência, mais de 120 milhões de linhas em Parquet, modeladas com dbt e DuckDB e conferidas contra a fonte.",
+  href: "/demonstracoes/gastos-publicos-federais/",
+  repository: "https://github.com/phaiffer/public-spending-analytics",
+  assets: "/demos/public-spending",
+} as const;
+
 export const petPlatform = {
   title: "Plataforma de Gestão para Negócios Pet",
   description: "Produto próprio em desenvolvimento para organizar rotinas de pet shops, banho e tosa e clínicas veterinárias em uma aplicação.",
@@ -89,7 +97,7 @@ export const disciplines = [
       { label: "Modelos e qualidade", side: "tecnologia", detail: "Tabelas no formato das perguntas do negócio, verificadas a cada execução e comparadas entre períodos para revelar mudanças inesperadas." },
       { label: "Consumo", side: "negocio", detail: "Painéis, relatórios e outros sistemas que usam os dados. É ali que a informação volta a ser decisão." },
     ] as DiagramNode[] },
-    evidence: [{ label: nycLakehouse.title, href: nycLakehouse.href }, { label: dataPlatform.title, href: dataPlatform.href }],
+    evidence: [{ label: publicSpending.title, href: publicSpending.href }, { label: nycLakehouse.title, href: nycLakehouse.href }, { label: dataPlatform.title, href: dataPlatform.href }],
   },
   {
     id: "arquitetura", label: "Arquitetura e cloud", title: "Arquitetura e cloud",
@@ -150,6 +158,16 @@ export const portfolio = [
     tech: "Python, PySpark, Delta Lake", evidence: "Execução de janeiro e fevereiro de 2024 registrada no repositório, com CI aprovada.",
     image: { src: `${nycLakehouse.assets}/card-960.webp`, width: 960, height: 600, alt: "Gráfico de viagens diárias por fornecedor em janeiro e fevereiro de 2024, calculado a partir da camada Gold" },
     links: [{ label: "Ver demonstração", href: nycLakehouse.href }, { label: "Código no GitHub", href: nycLakehouse.repository }],
+  },
+  {
+    id: "gastos-publicos", kind: "demo", category: "Demonstração técnica", title: publicSpending.title,
+    short: "Mais de 120 milhões de linhas de dados oficiais, de 2013 a 2026, modeladas e conferidas.",
+    summary: "Todos os arquivos mensais de Recebimentos de Recursos por Favorecido do Portal da Transparência, de dezembro de 2013 a outubro de 2026, em Parquet, modelados com dbt e DuckDB e consultados em um painel local.",
+    stage: "Execução local registrada", demonstrates: "Volume real com conferência: cada mês bate com a contagem de linhas da fonte, e fluxos internos do Tesouro são separados dos totais.",
+    tech: "Python, Parquet, DuckDB, dbt, Streamlit", evidence: "Repositório público com CI aprovada; números da página conferidos nos arquivos de staging.",
+    limits: "Painel local, não hospedado; os totais descrevem a fonte e não interpretam o orçamento.",
+    image: { src: `${publicSpending.assets}/card-960.webp`, width: 960, height: 600, alt: "Painel de recebimentos de recursos do Governo Federal com total recebido, lançamentos e gráfico mensal dos últimos 13 meses" },
+    links: [{ label: "Ver demonstração", href: publicSpending.href }, { label: "Código no GitHub", href: publicSpending.repository }],
   },
   {
     id: "tricologia", kind: "produto", category: "Produto próprio", title: trichologyPlatform.title,

@@ -11,11 +11,13 @@ const petPath = "/demonstracoes/plataforma-gestao-pet/";
 const petHtml = readFileSync(new URL(`../out${petPath}index.html`, import.meta.url), "utf8");
 const nycPath = "/demonstracoes/lakehouse-nyc-tlc/";
 const nycHtml = readFileSync(new URL(`../out${nycPath}index.html`, import.meta.url), "utf8");
+const spendingPath = "/demonstracoes/gastos-publicos-federais/";
+const spendingHtml = readFileSync(new URL(`../out${spendingPath}index.html`, import.meta.url), "utf8");
 const trichologyPath = "/demonstracoes/plataforma-clinica-tricologia/";
 const trichologyHtml = readFileSync(new URL(`../out${trichologyPath}index.html`, import.meta.url), "utf8");
 const institutionalPaths = ["/solucoes/", "/projetos/", "/como-trabalhamos/", "/contato/"];
 const institutional = new Map(institutionalPaths.map(path => [path, readFileSync(new URL(`../out${path}index.html`, import.meta.url), "utf8")]));
-const pages = new Map([["/", html], [demoPath, demoHtml], [petPath, petHtml], [nycPath, nycHtml], [trichologyPath, trichologyHtml], ...institutional]);
+const pages = new Map([["/", html], [demoPath, demoHtml], [petPath, petHtml], [nycPath, nycHtml], [spendingPath, spendingHtml], [trichologyPath, trichologyHtml], ...institutional]);
 
 test("publica HTML pré-renderizado com conteúdo institucional essencial", () => {
   for (const text of ["Conectamos tecnologia", "Plataforma de Gestão para Negócios Pet", "Extended Global Context", "Plataforma de Dados", "phaiffertech@gmail.com"]) {
@@ -82,6 +84,28 @@ test("a demonstração pet está ligada à homepage, explica os dados fictícios
   assert.ok(sitemap.includes(`<loc>${canonical}</loc>`));
 });
 
+test("a demonstração de gastos públicos mostra os números do resumo publicado e usa metadados próprios", () => {
+  assert.ok(html.includes(`href="${spendingPath}"`));
+  assert.ok(spendingHtml.includes("não interpretam o orçamento"));
+  const summary = JSON.parse(readFileSync(new URL("../out/demos/public-spending/summary.json", import.meta.url), "utf8"));
+  const number = new Intl.NumberFormat("pt-BR");
+  for (const value of [summary.rows, summary.distinct_beneficiary_ids, summary.negative_rows, summary.treasury_operations.rows]) {
+    assert.ok(spendingHtml.includes(number.format(value)), `Número ausente: ${value}`);
+  }
+  // Os totais por ano fecham com o total geral e as linhas com a contagem da fonte
+  assert.equal(summary.years.reduce((sum, year) => sum + year.rows, 0), summary.rows);
+  assert.equal(summary.years.reduce((sum, year) => sum + year.months, 0), summary.months);
+  assert.ok(Math.abs(summary.years.reduce((sum, year) => sum + year.net_all_brl, 0) - summary.net_all_brl) < 1);
+  assert.ok(Math.abs(summary.net_all_brl - summary.treasury_operations.net_brl - summary.treasury_management_units.net_brl - summary.net_default_brl) < 1);
+  for (const file of ["dashboard-light.webp", "dashboard-dark.webp", "summary.json", "og.png"]) {
+    assert.ok(spendingHtml.includes(`/demos/public-spending/${file}`), `Recurso ausente: ${file}`);
+  }
+  const canonical = `https://phaiffertech.com.br${spendingPath}`;
+  assert.ok(spendingHtml.includes(`rel="canonical" href="${canonical}"`));
+  const sitemap = readFileSync(new URL("../out/sitemap.xml", import.meta.url), "utf8");
+  assert.ok(sitemap.includes(`<loc>${canonical}</loc>`));
+});
+
 test("a demonstração NYC TLC está ligada à homepage, mostra a execução registrada e usa metadados próprios", () => {
   assert.ok(html.includes(`href="${nycPath}"`));
   assert.ok(nycHtml.includes("dados públicos da NYC Taxi"));
@@ -125,7 +149,7 @@ test("as páginas institucionais têm metadados próprios, entram no sitemap e m
     assert.ok(html.includes(`href="${path}"`), `Home sem link para: ${path}`);
   }
   const projects = institutional.get("/projetos/");
-  for (const path of [demoPath, petPath, nycPath, trichologyPath]) assert.ok(projects.includes(`href="${path}"`), `Projetos sem link para: ${path}`);
+  for (const path of [demoPath, petPath, nycPath, spendingPath, trichologyPath]) assert.ok(projects.includes(`href="${path}"`), `Projetos sem link para: ${path}`);
   assert.ok(institutional.get("/contato/").includes("Nada é enviado por este site"));
   for (const page of [html, institutional.get("/contato/")]) assert.ok(page.includes('href="https://wa.me/5541996294533'), "WhatsApp ausente");
 });

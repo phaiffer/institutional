@@ -1,0 +1,139 @@
+{
+  "source": "Portal da Transparência, Recebimentos de Recursos por Favorecido",
+  "repository_commit": "2951c2e",
+  "synced_on": "2026-10-23",
+  "checked_with": "DuckDB sobre os arquivos Parquet de staging, com as listas de códigos do Tesouro do repositório",
+  "first_month": "2013-12",
+  "last_month": "2026-10",
+  "open_month": "2026-10",
+  "months": 155,
+  "rows": 120093295,
+  "negative_rows": 1935627,
+  "distinct_beneficiary_ids": 1674906,
+  "net_all_brl": 14457448332603.69,
+  "net_default_brl": 27637905193490.54,
+  "treasury_operations": {
+    "codes": 18,
+    "rows": 5931,
+    "net_brl": -18404618225016.07
+  },
+  "treasury_management_units": {
+    "units": 8,
+    "rows": 2667,
+    "net_brl": 5224161364129.22
+  },
+  "years": [
+    {
+      "year": 2013,
+      "months": 1,
+      "rows": 688,
+      "net_default_brl": -4732736.03,
+      "net_all_brl": 702107861.29,
+      "negative_rows": 605
+    },
+    {
+      "year": 2014,
+      "months": 12,
+      "rows": 10427371,
+      "net_default_brl": 1407601704741.02,
+      "net_all_brl": 546473343606.78,
+      "negative_rows": 357244
+    },
+    {
+      "year": 2015,
+      "months": 12,
+      "rows": 9528128,
+      "net_default_brl": 1420180356054.35,
+      "net_all_brl": 575208277169.61,
+      "negative_rows": 154563
+    },
+    {
+      "year": 2016,
+      "months": 12,
+      "rows": 9788245,
+      "net_default_brl": 1497602488377.32,
+      "net_all_brl": 755975266239.04,
+      "negative_rows": 211451
+    },
+    {
+      "year": 2017,
+      "months": 12,
+      "rows": 9851812,
+      "net_default_brl": 1591564748629.94,
+      "net_all_brl": 856101938867.79,
+      "negative_rows": 136974
+    },
+    {
+      "year": 2018,
+      "months": 12,
+      "rows": 9769474,
+      "net_default_brl": 1630886067624.19,
+      "net_all_brl": 983830371520.96,
+      "negative_rows": 121151
+    },
+    {
+      "year": 2019,
+      "months": 12,
+      "rows": 10158304,
+      "net_default_brl": 1795206789777.09,
+      "net_all_brl": 1111431873765.98,
+      "negative_rows": 128617
+    },
+    {
+      "year": 2020,
+      "months": 12,
+      "rows": 8407210,
+      "net_default_brl": 2286571286967.76,
+      "net_all_brl": 786299015996.14,
+      "negative_rows": 256493
+    },
+    {
+      "year": 2021,
+      "months": 12,
+      "rows": 9319620,
+      "net_default_brl": 2065601749893.9,
+      "net_all_brl": 688048551356.46,
+      "negative_rows": 59670
+    },
+    {
+      "year": 2022,
+      "months": 12,
+      "rows": 9539865,
+      "net_default_brl": 2348868916975.33,
+      "net_all_brl": 1123544097771.68,
+      "negative_rows": 176039
+    },
+    {
+      "year": 2023,
+      "months": 12,
+      "rows": 9844439,
+      "net_default_brl": 2621564597505.26,
+      "net_all_brl": 1448288563892.41,
+      "negative_rows": 165732
+    },
+    {
+      "year": 2024,
+      "months": 12,
+      "rows": 9237291,
+      "net_default_brl": 2919991626915.44,
+      "net_all_brl": 1952495469736.57,
+      "negative_rows": 78602
+    },
+    {
+      "year": 2025,
+      "months": 12,
+      "rows": 8228227,
+      "net_default_brl": 3172682630105.04,
+      "net_all_brl": 2014322599863.47,
+      "negative_rows": 54402
+    },
+    {
+      "year": 2026,
+      "months": 10,
+      "rows": 5992621,
+      "net_default_brl": 2879586962659.94,
+      "net_all_brl": 1614726854955.52,
+      "negative_rows": 34084
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+/* Gráfico anual da demonstração de gastos públicos; o restante usa o módulo de plataforma-de-dados */
+
+.chart { margin-top: 40px; }
+.title { margin: 0 0 12px; color: var(--ink); font-size: 14px; }
+.spaced { margin-top: 40px; }
+.years { display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: 8px; height: 280px; margin: 8px 0 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line-strong); }
+/* A barra ocupa a altura proporcional da coluna; o rótulo fica acima dela, sem disputar espaço */
+.years li { display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; padding-top: 22px; text-align: center; }
+.value { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 5px; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar { position: relative; flex: none; height: var(--h); min-height: 2px; border-radius: 3px 10px 0 0; background: var(--blue); }
+.partial .bar { background: color-mix(in srgb, var(--blue) 40%, #fff); }
+.labels { display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 12px; text-align: center; font-variant-numeric: tabular-nums; }
+.short { display: none; }
+.legend { margin: 14px 0 0; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 700px) {
+  .years { height: 200px; gap: 3px; }
+  .labels { gap: 3px; font-size: 11px; }
+  .value { display: none; }
+  .full { display: none; }
+  .short { display: inline; }
+}

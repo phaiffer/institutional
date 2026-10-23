@@ -62,6 +62,7 @@ Cada página em `/demonstracoes/` mostra um projeto com dados fictícios ou púb
 
 - `data-platform`: captura, dois gráficos e o `manifest.json` de uma execução local; o teste confere os hashes dos gráficos com o manifesto.
 - `nyc-tlc`: `showcase_results.json` e os SVGs do repositório `nyc-tlc-lakehouse`; a página calcula os totais a partir do JSON.
+- `public-spending`: `summary.json` com linhas e totais recontados nos arquivos Parquet de staging do repositório `public-spending-analytics` (data da sincronização e commit no próprio arquivo) e recortes das capturas do painel; o teste confere que os totais por ano fecham com o geral.
 - `pet-platform` e `trichology`: capturas das aplicações com dados fictícios.
 
 Ao atualizar uma demonstração, copie de novo os arquivos de origem e confira o commit citado na página.
