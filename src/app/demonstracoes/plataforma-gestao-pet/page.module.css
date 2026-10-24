@@ -2,7 +2,7 @@
 
 .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 .screen { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
-.thumbnail { position: relative; display: block; width: 100%; padding: 0; border: 0; overflow: hidden; background: light-dark(#f2f6f8, #132c44); cursor: zoom-in; text-align: left; }
+.thumbnail { position: relative; display: block; width: 100%; padding: 0; border: 0; overflow: hidden; background: var(--surface-2); cursor: zoom-in; text-align: left; }
 .screen img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform .25s ease; }
 .thumbnail:hover img { transform: scale(1.015); }
 .thumbnail:focus-visible, .viewer button:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; }
@@ -12,29 +12,31 @@
 .screen figcaption strong { font-size: 17px; }
 .screen figcaption span { color: var(--muted); font-size: 13px; line-height: 1.6; }
 
-.viewer { position: fixed; inset: 0; width: min(1100px, 94vw); max-width: none; max-height: 92dvh; margin: auto; padding: 0; overflow: visible; border: 1px solid rgba(255, 255, 255, .22); border-radius: var(--radius); background: #101e2c; color: white; }
-.viewer::backdrop { background: rgba(5, 13, 22, .88); }
-.viewerContent { display: flex; max-height: 92dvh; flex-direction: column; padding: clamp(12px, 2vw, 24px); }
+/* Visualizador sem moldura: a captura ampliada direto sobre o fundo escurecido */
+.viewer { position: fixed; inset: 0; width: min(1400px, 96vw); max-width: none; max-height: 96dvh; margin: auto; padding: 0; overflow: visible; border: 0; background: transparent; color: white; }
+.viewer::backdrop { background: rgba(5, 13, 22, .96); }
+.viewerContent { display: flex; max-height: 96dvh; flex-direction: column; padding: 8px 0; }
 .viewerToolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 14px; }
 .viewerToolbar > div { display: flex; align-items: baseline; gap: 14px; }
 .viewerToolbar strong { font-size: 16px; }
-.viewerToolbar span, .viewerCaption { color: #c4d0dc; font-size: 13px; }
+.viewerToolbar span { color: #c4d0dc; font-size: 13px; }
 .viewerClose, .viewerArrow { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border: 1px solid #536372; border-radius: var(--radius-sm); background: #1d3042; color: white; cursor: pointer; font-size: 30px; line-height: 1; }
 .viewerClose { font-size: 28px; }
 .viewerClose:hover, .viewerArrow:hover { background: #2c4962; }
 .viewerImage { display: grid; min-height: 0; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: clamp(8px, 2vw, 20px); }
-.viewerImage img { width: 100%; height: auto; max-height: calc(92dvh - 160px); object-fit: contain; }
-.viewerCaption { margin: 14px 64px 0; line-height: 1.5; }
+.viewerImage img { width: 100%; height: auto; max-height: calc(96dvh - 80px); object-fit: contain; border-radius: var(--radius-sm); }
 
 @media (max-width: 760px) {
   .gallery { grid-template-columns: 1fr; gap: 20px; }
   .viewer { width: 96vw; }
-  .viewerContent { padding: 10px; }
+  .viewerContent { padding: 6px 0; }
   .viewerToolbar > div { align-items: flex-start; flex-direction: column; gap: 3px; }
-  .viewerImage { grid-template-columns: 40px minmax(0, 1fr) 40px; gap: 5px; }
+  /* No celular a imagem usa toda a largura e as setas ficam embaixo dela */
+  .viewerImage { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .viewerImage img { grid-column: 1 / -1; grid-row: 1; }
+  .viewerArrow:last-child { justify-self: end; }
   .viewerArrow { width: 40px; height: 44px; }
-  .viewerCaption { margin: 12px 0 0; }
-  .viewerImage img { max-height: calc(92dvh - 150px); }
+  .viewerImage img { max-height: calc(96dvh - 110px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

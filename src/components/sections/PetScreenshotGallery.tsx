@@ -37,7 +37,7 @@ export function PetScreenshotGallery({ screens, assets }: { screens: Screen[]; a
           return (
             <figure key={screen.file} className={styles.screen}>
               <button className={styles.thumbnail} type="button" onClick={(event) => open(index, event.currentTarget)} aria-label={`Ampliar captura: ${screen.title}`}>
-                <Image src={src} width={screen.width ?? 1600} height={screen.height ?? 1000} alt={screen.alt} sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 560px" />
+                <Image className="skeleton" src={src} width={screen.width ?? 1600} height={screen.height ?? 1000} alt={screen.alt} sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 560px" />
                 <span className={styles.zoomHint}>Ampliar imagem <span aria-hidden="true">↗</span></span>
               </button>
               <figcaption><strong>{screen.title}</strong><span>{screen.caption}</span></figcaption>
@@ -68,7 +68,6 @@ export function PetScreenshotGallery({ screens, assets }: { screens: Screen[]; a
               <Image src={`${assets}/${activeScreen.file}`} width={activeScreen.width ?? 1600} height={activeScreen.height ?? 1000} alt={activeScreen.alt} priority />
               <button className={styles.viewerArrow} type="button" onClick={() => move(1)} aria-label="Ver próxima imagem">›</button>
             </div>
-            <p className={styles.viewerCaption}>{activeScreen.caption}</p>
           </div>
         )}
       </dialog>

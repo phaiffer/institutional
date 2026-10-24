@@ -17,7 +17,7 @@ type Project = (typeof portfolio)[number];
 function Ficha({ item }: { item: Project }) {
   return <>
     {"image" in item
-      ? <Link className="ficha-media" href={item.links[0].href} tabIndex={-1} aria-hidden="true"><Image src={item.image.src} width={item.image.width} height={item.image.height} alt="" sizes="(max-width: 980px) 100vw, 460px" loading="lazy" /></Link>
+      ? <Link className="ficha-media" href={item.links[0].href} tabIndex={-1} aria-hidden="true"><Image className="skeleton" src={item.image.src} width={item.image.width} height={item.image.height} alt="" sizes="(max-width: 980px) 100vw, 460px" loading="lazy" /></Link>
       : <VideoPlayer videos={egc.videos} />}
     <div>
       <p className="kind" data-kind={item.kind}>{item.category}</p>

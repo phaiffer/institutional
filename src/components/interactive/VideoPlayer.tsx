@@ -18,7 +18,7 @@ export function VideoPlayer({ videos }: { videos: readonly Video[] }) {
         {playing
           ? <iframe key={video.id} src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`} title={`${video.title}, por ${video.author}`} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
           : <a className="video-poster" href={video.href} target="_blank" rel="noopener noreferrer" onClick={(event) => { event.preventDefault(); setPlaying(true); }}>
-            <Image src={video.poster} width={960} height={540} alt="" sizes="(max-width: 980px) 100vw, 460px" loading="lazy" />
+            <Image className="skeleton" src={video.poster} width={960} height={540} alt="" sizes="(max-width: 980px) 100vw, 460px" loading="lazy" />
             <span className="video-play"><i aria-hidden="true">▶</i>Assistir {video.title}</span>
           </a>}
       </div>

@@ -70,8 +70,8 @@ export default function PublicSpendingDemo() {
           </ol>
           <figure className={styles.overview}>
             <a href={publicSpending.repository} target="_blank" rel="noopener noreferrer" aria-label="Abrir o repositório com as capturas originais do painel">
-              <Image className="only-light" src={`${publicSpending.assets}/dashboard-light.webp`} width={1200} height={1157} alt="Painel local com total recebido, lançamentos, gráfico mensal e rankings por órgão superior e por tipo de favorecido" sizes="(max-width: 700px) 100vw, 1440px" loading="lazy" />
-              <Image className="only-dark" src={`${publicSpending.assets}/dashboard-dark.webp`} width={1200} height={1157} alt="Painel local com total recebido, lançamentos, gráfico mensal e rankings por órgão superior e por tipo de favorecido, no tema escuro" sizes="(max-width: 700px) 100vw, 1440px" loading="lazy" />
+              <Image className="only-light skeleton" src={`${publicSpending.assets}/dashboard-light.webp`} width={1200} height={1157} alt="Painel local com total recebido, lançamentos, gráfico mensal e rankings por órgão superior e por tipo de favorecido" sizes="(max-width: 700px) 100vw, 1440px" loading="lazy" />
+              <Image className="only-dark skeleton" src={`${publicSpending.assets}/dashboard-dark.webp`} width={1200} height={1157} alt="Painel local com total recebido, lançamentos, gráfico mensal e rankings por órgão superior e por tipo de favorecido, no tema escuro" sizes="(max-width: 700px) 100vw, 1440px" loading="lazy" />
             </a>
             <figcaption>Painel local nos últimos 13 meses, em captura publicada no repositório com dados de 22/10/2026. Nessa versão, as unidades gestoras do Tesouro ainda entravam no total padrão; hoje elas ficam de fora, como as operações de caixa. O painel acompanha o tema claro ou escuro de quem o abre.</figcaption>
           </figure>

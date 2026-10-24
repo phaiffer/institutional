@@ -67,7 +67,7 @@ export default function DataPlatformDemo() {
           </ol>
           <figure className={styles.overview}>
             <a href={`${dataPlatform.assets}/overview.png`} aria-label="Abrir a captura do showcase em tamanho original">
-              <Image src={preview.url} width={preview.width} height={preview.height} alt={preview.alt} sizes="(max-width: 700px) 100vw, 1240px" />
+              <Image className="skeleton" src={preview.url} width={preview.width} height={preview.height} alt={preview.alt} sizes="(max-width: 700px) 100vw, 1240px" />
             </a>
             <figcaption>Captura do visualizador local com a sequência implementada e os resultados da amostra de {date}. <a href={`${dataPlatform.assets}/overview.png`}>Abrir imagem original <span aria-hidden="true">↗</span></a></figcaption>
           </figure>

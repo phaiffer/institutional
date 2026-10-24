@@ -88,7 +88,7 @@ export function Projects() {
   return <section className="section" id="projetos" aria-labelledby="projetos-title"><div className="container">
     <SectionHeading label="Projetos" id="projetos-title" title="Produtos, demonstrações e código aberto" note="Todos têm código público ou capturas de tela, e cada um informa o estágio em que está." />
     <article className="feature" aria-labelledby="destaque-title" data-reveal>
-      <Link className="feature-media" href={featured.links[0].href} tabIndex={-1} aria-hidden="true"><Image src={featured.image.src} width={featured.image.width} height={featured.image.height} alt="" sizes="(max-width: 980px) 100vw, 680px" /></Link>
+      <Link className="feature-media" href={featured.links[0].href} tabIndex={-1} aria-hidden="true"><Image className="skeleton" src={featured.image.src} width={featured.image.width} height={featured.image.height} alt="" sizes="(max-width: 980px) 100vw, 680px" /></Link>
       <div>
         <p className="kind" data-kind={featured.kind}>{featured.category}, dados públicos</p>
         <h3 id="destaque-title">{featured.title}</h3>

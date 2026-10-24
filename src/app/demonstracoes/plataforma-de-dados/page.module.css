@@ -10,7 +10,7 @@
 .steps p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
 
 .overview { margin: 0; }
-.overview img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.overview img { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-1); }
 .overview figcaption, .chart figcaption { color: var(--muted); font-size: 13px; line-height: 1.65; margin-top: 14px; }
 .overview figcaption a, .chart figcaption a { display: inline-block; }
 
@@ -25,19 +25,19 @@
 .table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
 .table caption { text-align: left; font-weight: 700; padding-bottom: 14px; }
 .table th, .table td { border-bottom: 1px solid var(--line); padding: 12px 16px; vertical-align: top; }
-.table thead { background: light-dark(#e7eef5, #132c44); }
+.table thead { background: var(--surface-2); }
 .table td:nth-child(2) { font-variant-numeric: tabular-nums; }
 .note { font-size: 13px; margin: 16px 0 0; }
 
 .charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 40px; }
 .chart { min-width: 0; margin: 0; }
 .chart h3 { font-size: 21px; margin-bottom: 16px; }
-.chart img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.chart img { display: block; width: 100%; height: auto; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow-1); }
 
 .wideChart { margin-top: 40px; }
 .wideChart img { background: #fff; }
 
-.drift { margin-top: 40px; padding: 24px 28px; border-left: 3px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; background: light-dark(#eef4fa, #12314f); }
+.drift { margin-top: 40px; padding: 24px 28px; border-left: 3px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; background: var(--tint); }
 .drift h3 { font-size: 21px; margin-bottom: 10px; }
 .drift p { max-width: 850px; margin: 0; color: var(--muted); }
 

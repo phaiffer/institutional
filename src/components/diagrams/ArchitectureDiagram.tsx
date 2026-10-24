@@ -97,6 +97,7 @@ export function ArchitectureDiagram({ title, nodes }: { title: string; nodes: re
       <p className="arch-title"><strong>{title}</strong></p>
       <div ref={wrap} className="arch-wrap">
         <svg className="arch-wires" viewBox={`0 0 ${box.width || 1} ${box.height || 1}`} aria-hidden="true" focusable="false">
+          {wires.map((d, i) => <path key={`track-${i}`} className="track" d={d} />)}
           {wires.map((d, i) => <path key={i} ref={(node) => { paths.current[i] = node; }} d={d} pathLength={1} style={{ "--i": i } as CSSProperties} className={i === selected || i + 1 === selected ? "is-active" : undefined} />)}
           <circle ref={dot} r="5" cx="-20" cy="-20" style={{ opacity: 0 }} />
         </svg>

@@ -29,7 +29,7 @@ export function Header() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [open]);
 
-  return <header className={`site-header${scrolled ? " is-scrolled" : ""}`} id="topo">
+  return <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
     <div className="container nav-row">
       <Link className="brand" href="/" aria-label="PhaifferTech, página inicial"><Image src="/brand/logo-claro.svg" width={941} height={169} alt="PhaifferTech" priority /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={current(item.href)}>{item.label}</Link>)}</nav>
