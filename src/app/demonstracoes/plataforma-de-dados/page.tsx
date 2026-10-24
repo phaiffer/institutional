@@ -60,7 +60,6 @@ export default function DataPlatformDemo() {
         </div>
 
         <section className={`demo-section ${styles.section}`}aria-labelledby="fluxo">
-          <p className="eyebrow">DA INGESTÃO À CONSULTA</p>
           <h2 id="fluxo">O caminho percorrido pelos dados.</h2>
           <ol className={styles.steps}>
             {steps.map((step, index) => <li key={step.title}><span className={styles.stepNumber}>0{index + 1}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}
@@ -109,7 +108,6 @@ export default function DataPlatformDemo() {
         </section>
 
         <section className={`demo-section ${styles.section}`}aria-labelledby="fontes">
-          <p className="eyebrow">CÓDIGO E FONTES</p>
           <h2 id="fontes">Uma demonstração que pode ser examinada.</h2>
           <p>O repositório documenta o fluxo local com Python 3.11, Papermill, Parquet, dbt, DuckDB e Great Expectations. Esta apresentação usa os artefatos da execução local registrada.</p>
           <p>Dados publicados pela FiveThirtyEight, nos conjuntos <a href="https://github.com/fivethirtyeight/data/tree/master/college-majors" target="_blank" rel="noopener noreferrer">College Majors</a> e <a href="https://github.com/fivethirtyeight/data/tree/master/bechdel" target="_blank" rel="noopener noreferrer">Bechdel</a>, sob <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, salvo indicação específica da fonte. As transformações e os gráficos em português foram elaborados neste projeto.</p>

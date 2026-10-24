@@ -67,7 +67,6 @@ export default function NycLakehouseDemo() {
         </div>
 
         <section className={`demo-section ${styles.section}`} aria-labelledby="fluxo">
-          <p className="eyebrow">DA FONTE PÚBLICA AO INDICADOR</p>
           <h2 id="fluxo">O caminho percorrido pelos dados.</h2>
           <ol className={styles.steps}>
             {steps.map((step, index) => <li key={step.title}><span className={styles.stepNumber}>0{index + 1}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}
@@ -127,7 +126,6 @@ export default function NycLakehouseDemo() {
         </section>
 
         <section className={`demo-section ${styles.section}`} aria-labelledby="fontes">
-          <p className="eyebrow">CÓDIGO E FONTES</p>
           <h2 id="fontes">Uma demonstração que pode ser examinada.</h2>
           <p>O repositório documenta a execução local com Python 3.12, Java 21, PySpark e Delta Lake, além dos comandos usados para reproduzir os dois meses e regenerar as imagens.</p>
           <p>Dados de viagens publicados pela <a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page" target="_blank" rel="noopener noreferrer">NYC Taxi &amp; Limousine Commission</a>. Transformações, gráficos e textos em português foram elaborados neste projeto.</p>

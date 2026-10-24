@@ -11,8 +11,8 @@ import evidence from "../../../public/demos/nyc-tlc/showcase_results.json";
 
 const delay = (i: number) => ({ "--i": i }) as CSSProperties;
 
-function SectionHeading({ label, title, note, id }: { label: string; title: string; note?: string; id: string }) {
-  return <div className="section-heading" data-reveal><div><p className="eyebrow">{label}</p><h2 id={id}>{title}</h2></div>{note && <p className="heading-note">{note}</p>}</div>;
+function SectionHeading({ title, note, id }: { title: string; note?: string; id: string }) {
+  return <div className="section-heading" data-reveal><div><h2 id={id}>{title}</h2></div>{note && <p className="heading-note">{note}</p>}</div>;
 }
 
 // Faixa decorativa no traço do banner oficial: um degrau com curvas arredondadas que se desenha ao abrir.
@@ -49,7 +49,7 @@ export function Frictions() {
     </>,
   }));
   return <section className="section" aria-labelledby="atrito-title"><div className="container">
-    <SectionHeading label="Problemas comuns" id="atrito-title" title="Situações que costumamos resolver" note="Para cada uma, como ela costuma aparecer no dia a dia e por onde começamos o trabalho." />
+    <SectionHeading id="atrito-title" title="Situações que costumamos resolver" note="Para cada uma, como ela costuma aparecer no dia a dia e por onde começamos o trabalho." />
     <div data-reveal><Tabs items={items} label="Situações" orientation="vertical" className="frictions" listClassName="friction-list" /></div>
   </div></section>;
 }
@@ -72,7 +72,7 @@ export function Solutions() {
     </>,
   }));
   return <section className="section section-soft" id="solucoes" aria-labelledby="solucoes-title"><div className="container">
-    <SectionHeading label="Áreas de atuação" id="solucoes-title" title="Software, dados, arquitetura e integração" note="Cada área tem um diagrama com as partes envolvidas; clique em cada uma para ver o que ela faz." />
+    <SectionHeading id="solucoes-title" title="Software, dados, arquitetura e integração" note="Cada área tem um diagrama com as partes envolvidas; clique em cada uma para ver o que ela faz." />
     <div data-reveal><Tabs items={items} label="Áreas de atuação" listClassName="tabs" panelClassName="tabpanel" /></div>
   </div></section>;
 }
@@ -86,7 +86,7 @@ export function Projects() {
   const rowHref = (item: (typeof portfolio)[number]) => item.links.find(link => link.href.startsWith("/"))?.href ?? `/projetos/#${item.id}`;
 
   return <section className="section" id="projetos" aria-labelledby="projetos-title"><div className="container">
-    <SectionHeading label="Projetos" id="projetos-title" title="Produtos, demonstrações e código aberto" note="Todos têm código público ou capturas de tela, e cada um informa o estágio em que está." />
+    <SectionHeading id="projetos-title" title="Produtos, demonstrações e código aberto" note="Todos têm código público ou capturas de tela, e cada um informa o estágio em que está." />
     <article className="feature" aria-labelledby="destaque-title" data-reveal>
       <Link className="feature-media" href={featured.links[0].href} tabIndex={-1} aria-hidden="true"><Image className="skeleton" src={featured.image.src} width={featured.image.width} height={featured.image.height} alt="" sizes="(max-width: 980px) 100vw, 680px" /></Link>
       <div>
@@ -117,7 +117,7 @@ export function Projects() {
 
 export function Method() {
   return <section className="section section-navy" aria-labelledby="metodo-title"><div className="container">
-    <SectionHeading label="Como trabalhamos" id="metodo-title" title="Etapas de um projeto" note="As decisões técnicas e o escopo são alinhados durante o trabalho." />
+    <SectionHeading id="metodo-title" title="Etapas de um projeto" note="As decisões técnicas e o escopo são alinhados durante o trabalho." />
     <ol className="steps" data-reveal>{process.map((step, index) => <li key={step.title} style={delay(index)}><span className="serial">{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>
     <p className="section-more"><Link className="text-link" href="/como-trabalhamos/">O que acontece em cada etapa</Link></p>
   </div></section>;
@@ -125,7 +125,7 @@ export function Method() {
 
 export function Contact() {
   return <section className="section section-soft" id="contato" aria-labelledby="contato-title"><div className="container contact-grid">
-    <div data-reveal><p className="eyebrow">Contato</p><h2 className="contact-title" id="contato-title">Conte o que precisa ser resolvido</h2><p className="contact-lead">Escreva sobre o problema, os sistemas envolvidos e o que você gostaria de melhorar. A conversa começa por aí.</p></div>
+    <div data-reveal><h2 className="contact-title" id="contato-title">Conte o que precisa ser resolvido</h2><p className="contact-lead">Escreva sobre o problema, os sistemas envolvidos e o que você gostaria de melhorar. A conversa começa por aí.</p></div>
     <div className="contact-box" data-reveal style={delay(1)}>
       <p className="eyebrow">E-mail</p>
       <a className="contact-email" href={`mailto:${site.email}`}>{site.email}</a>

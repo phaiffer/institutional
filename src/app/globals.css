@@ -22,8 +22,8 @@
 
   /* Camadas, da mais funda à mais alta: navy-deep (cabeçalho, hero, rodapé) → navy-surface
      (seções navy) → bg (fundo da página) → paper (seções suaves) → white (cartões) → surface-2 */
-  --bg: #fff;
-  --paper: #f6f8fb;       /* seções suaves: branco levemente frio, da família da marca */
+  --bg: #f8fafc;          /* fundo da página: quase branco e frio, para os cartões brancos se destacarem */
+  --paper: #eef3f8;       /* seções suaves: um degrau abaixo do fundo, da família da marca */
   --white: #fff;          /* superfície de cartões, campos e diagramas */
   --ink: #102b43;
   --muted: #486072;
@@ -31,6 +31,10 @@
   --line-strong: #aebdca;
   --line-on-dark: #3f617b;
   --text-on-dark: #c5d8e5;
+  --overlay: rgb(5 13 22 / .96);      /* fundo atrás de visualizadores abertos */
+  --control-on-dark: #1d3042;         /* botões sobre fundo escuro: normal, hover e contorno */
+  --control-on-dark-hover: #2c4962;
+  --control-on-dark-edge: #536372;
 
   /* Superfícies e estados derivados; o tema escuro redefine estes valores */
   --navy-surface: var(--navy); /* seções e caixas navy */

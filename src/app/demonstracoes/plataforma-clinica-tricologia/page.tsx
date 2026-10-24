@@ -51,13 +51,11 @@ export default function TrichologyPlatformDemo() {
       </div>
 
       <section className="demo-section" aria-labelledby="telas">
-        <p className="eyebrow">CAPTURAS DO AMBIENTE DE DEMONSTRAÇÃO</p>
         <h2 id="telas">Do questionário ao laudo, no mesmo prontuário.</h2>
         <PetScreenshotGallery screens={screens} assets={trichologyPlatform.assets} />
       </section>
 
       <section className={`demo-section ${styles.section}`} aria-labelledby="fluxo">
-        <p className="eyebrow">COMO O ATENDIMENTO SE ORGANIZA</p>
         <h2 id="fluxo">Uma pontuação que pode ser conferida item a item.</h2>
         <ol className={styles.steps}>
           {steps.map((step, index) => <li key={step.title}><span className={styles.stepNumber}>0{index + 1}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}

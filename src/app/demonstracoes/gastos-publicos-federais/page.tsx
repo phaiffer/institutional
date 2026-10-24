@@ -63,7 +63,6 @@ export default function PublicSpendingDemo() {
         </div>
 
         <section className={`demo-section ${styles.section}`} aria-labelledby="fluxo">
-          <p className="eyebrow">DA FONTE OFICIAL AO PAINEL</p>
           <h2 id="fluxo">O caminho percorrido pelos dados.</h2>
           <ol className={styles.steps}>
             {steps.map((step, index) => <li key={step.title}><span className={styles.stepNumber}>0{index + 1}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}
@@ -134,7 +133,6 @@ export default function PublicSpendingDemo() {
         </section>
 
         <section className={`demo-section ${styles.section}`} aria-labelledby="fontes">
-          <p className="eyebrow">CÓDIGO E FONTES</p>
           <h2 id="fontes">Uma demonstração que pode ser examinada.</h2>
           <p>O repositório documenta a sincronização, o staging, os modelos dbt, os testes, o painel e as decisões sobre valores negativos, códigos do Tesouro e identificação de favorecidos, com licença MIT.</p>
           <p>Dados publicados pela Controladoria-Geral da União no <a href={portalUrl} target="_blank" rel="noopener noreferrer">Portal da Transparência</a>. Transformações, painel e textos em português foram elaborados neste projeto.</p>

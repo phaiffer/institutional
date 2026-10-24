@@ -43,7 +43,6 @@ export default function PetPlatformDemo() {
       </div>
 
       <section className="demo-section" aria-labelledby="telas">
-        <p className="eyebrow">CAPTURAS DO AMBIENTE DE DEMONSTRAÇÃO</p>
         <h2 id="telas">Rotinas conectadas em uma mesma aplicação.</h2>
         <PetScreenshotGallery screens={screens} assets={petPlatform.assets} />
       </section>

@@ -18,12 +18,12 @@ export default function MethodPage() {
     </div></header>
 
     <section className="section" aria-labelledby="etapas-title"><div className="container">
-      <div className="section-heading" data-reveal><div><p className="eyebrow">Etapas</p><h2 id="etapas-title">Da descoberta à evolução</h2></div></div>
+      <div className="section-heading" data-reveal><div><h2 id="etapas-title">Da descoberta à evolução</h2></div></div>
       <ol className="steps steps-light" data-reveal>{process.map((step, index) => <li key={step.title} style={{ "--i": index } as CSSProperties}><span className="serial">{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.detail}</p><p className="receive"><b>Ao final da etapa</b>{step.receive}</p></li>)}</ol>
     </div></section>
 
     <section className="section section-soft" id="sobre" aria-labelledby="sobre-title"><div className="container contact-grid">
-      <div data-reveal><p className="eyebrow">Sobre</p><h2 className="contact-title" id="sobre-title">Sobre a PhaifferTech</h2></div>
+      <div data-reveal><h2 className="contact-title" id="sobre-title">Sobre a PhaifferTech</h2></div>
       <div className="about-copy" data-reveal>
         <p>A PhaifferTech reúne engenharia de software e dados para lidar com problemas que atravessam sistemas, pessoas e processos. O trabalho começa pela compreensão do cenário e segue até a implementação da solução.</p>
         <p>Escolhemos as tecnologias pelo que cada problema pede e explicamos as decisões a quem vai usar e manter o sistema. Preferimos entregar em partes menores, validadas com quem usa, a guardar tudo para uma entrega única no fim.</p>

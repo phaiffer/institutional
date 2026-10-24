@@ -2,6 +2,8 @@ export const site = {
   name: "PhaifferTech",
   email: "phaiffertech@gmail.com",
   whatsapp: { label: "(41) 99629-4533", href: "https://wa.me/5541996294533?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20PhaifferTech." },
+  // Dados do comprovante de inscrição na Receita Federal (aberta em 20/01/2026)
+  legal: { name: "Willian Phaiffer Cardoso Desenvolvimento de Software LTDA", cnpj: "64.600.358/0001-38" },
   url: "https://phaiffertech.com.br",
   tagline: "Conectamos tecnologia ao seu negócio.",
   description: "Consultoria em engenharia de software, dados, integração e arquitetura para conectar tecnologia aos desafios do negócio.",
@@ -209,8 +211,8 @@ export const portfolio = [
 ] as const;
 
 export const process = [
-  { title: "Descoberta", detail: "Entendemos objetivos, contexto, sistemas existentes e restrições.", receive: "Um resumo escrito do problema, do contexto e do que fica fora do escopo." },
-  { title: "Arquitetura", detail: "Definimos prioridades e um desenho técnico viável para o problema.", receive: "O desenho da solução, as prioridades e o motivo de cada escolha." },
-  { title: "Desenvolvimento", detail: "Construímos e validamos a solução em etapas combinadas.", receive: "Entregas parciais utilizáveis e o registro do que foi validado." },
-  { title: "Evolução", detail: "Acompanhamos o resultado e planejamos os próximos ajustes.", receive: "Uma lista priorizada de ajustes com base no uso real." },
+  { title: "Descoberta", detail: "Uma conversa objetiva sobre o problema, os sistemas que já existem e as restrições.", receive: "Um resumo curto do problema e do que fica fora do escopo, para começar sem demora." },
+  { title: "Arquitetura", detail: "Definimos o mínimo necessário para começar com segurança e o que pode esperar.", receive: "As prioridades e o motivo de cada escolha técnica, sem documento longo." },
+  { title: "Desenvolvimento", detail: "Entregas curtas, cada uma testável por quem vai usar.", receive: "Uma parte funcionando a cada ciclo, com o que foi validado." },
+  { title: "Evolução", detail: "Ajustamos a partir do uso real e decidimos juntos o próximo passo.", receive: "A lista do que vem a seguir, em ordem de prioridade." },
 ] as const;
